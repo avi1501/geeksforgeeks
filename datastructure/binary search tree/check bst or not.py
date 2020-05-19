@@ -7,8 +7,16 @@ class newNode:
 		self.right = None
 
 # Returns true if given tree is BST. 
-def isBst(root):
-	c
+def isBst(root,min = -1000,max=1000):
+	min = -1000
+	max = 1000
+	if root == None:
+		return True
+	if root>min and root < max:
+		return isBst(root.left,min,root.data) and isBst(root.right,root.data,max)
+
+	else:
+		return False
 
 
 
