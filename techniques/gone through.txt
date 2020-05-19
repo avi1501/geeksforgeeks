@@ -1,0 +1,3 @@
+prefix sum algorithm            -------
+Two pointer technique           --------
+Sliding window technique        --------
