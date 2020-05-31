@@ -1,3 +1,9 @@
+'''
+in a given tree 
+
+'''
+
+
 class Node: 
   
     # Constructor to create a new node 
@@ -5,33 +11,59 @@ class Node:
         self.key  = key 
         self.left = None
         self.right = None
-  
-# This function finds predecessor and successor of key in BST 
-# It sets pre and suc as predecessor and successor respectively 
-def findPreSuc(root,key):
-    if root == None:
-        return 
-    if root.key == key:
-        if root.left is None:
-            tmp = root.left
-            while(tmp.right is not None):
-                tmp = tmp.right
-            findPreSuc.pre = tmp
-        
-        if root.right is not None:
-            tmp = root.right
-            while(tmp.left):
-                tmp = tmp.left
-            findPreSuc.suc = tmp
-        return 
+#In order predecessor 
+#   write your code here
+def pred(root,key):
+    pre = 0
+    succ = 0
+    temp = root.left
+    while(temp.right):
+        temp = temp.right
+    print(temp.right.key)
+     
 
-    if root.key > key:
-        findPreSuc.suc = root
-        findPreSuc(root.left,key)
+
+
+
+
+# def succ(root,key):
+#     data = root.key
+#     temp = root.right
+#     while(temp.left):
+#         if key>temp.key:
+#             data = temp.key
+#         temp = temp.left
+#     return data
+
+
+# if p=50
+'''if p.left is not null:
+        temp = root.left
+        pred = p.left.data
+        while(temp.right):
+            temp = temp.right
+
+
+    pred = root.data
+    while(temp.data != key and temp != None)
+        pred = temp.data
+        temp = temp.left 
+    if temp ==None:
+        return data not found
     
-    else:
-        findPreSuc.pre = root
-        findpre
+    
+    
+    
+    if root == key
+    pred = root.data
+    temp = root.left
+
+
+'''
+        
+            
+        
+
   
 # A utility function to insert a new node in with given key in BST 
 def insert(node , key): 
@@ -67,19 +99,5 @@ insert(root, 60);
 insert(root, 80); 
   
 # Static variables of the function findPreSuc  
-findPreSuc.pre = None
-findPreSuc.suc = None
+print(pred(root,40))
   
-findPreSuc(root, key) 
-  
-if findPreSuc.pre is not None: 
-    print("Predecessor is", findPreSuc.pre.key) 
-  
-else: 
-    print("No Predecessor")
-  
-if findPreSuc.suc is not None: 
-    print("Successor is") 
-    findPreSuc.suc.key 
-else: 
-    print("No Successor",)
