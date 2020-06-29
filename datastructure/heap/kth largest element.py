@@ -43,6 +43,7 @@ the extract max k times to fet k maximum element from the maxheap in O(klogn)
 so total time complexity for this is O(n+klogn)
 '''
 print("heap one is started")
+print("sadjfhaksdhgifadhga")
 
 def heapify(arr,n,i):
     largest = i
@@ -75,5 +76,47 @@ def heapsort(arr,k):
 
 
 arr = [1,23,12,9,30,2,50]
-
+k=5
 heapsort(arr,k)
+
+
+
+
+print("hello world")
+
+
+
+def heapifys(arr,n,i):
+    minimum = i
+    l = i*2+1
+    r = i*2+2
+    if l < n and arr[l] < arr[i]:
+        minimum = l
+    if r < n and arr[r] < arr[minimum]:
+        minimum = r
+    if minimum != i:
+        arr[minimum], arr[i] = arr[i], arr[minimum]
+        heapifys(arr,n,minimum)
+    
+
+def heapsorts(arr,k):
+    n = len(arr)
+    print(n)
+    for i in range(n//2-1,-1,-1):
+        heapifys(arr,n,i)
+    print(arr)
+    counter = 0
+    for i in range(n-1,0,-1):
+        arr[0],arr[i] = arr[i],arr[0]
+        heapifys(arr,i,0)
+        if k <= 1:
+            print(arr[-counter+1])
+            return
+        k -= 1
+        counter += 1
+        # print(arr[-counter])
+
+
+arr = [1,23,12,9,30,2,50]
+k=4
+heapsorts(arr,k)
