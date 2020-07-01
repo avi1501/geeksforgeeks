@@ -11,7 +11,7 @@ def boolmatrix(matrix):
     for i in range(m):
         for j in range(n):
             if col[j] == 1 or row[i] == 1:
-                matrix[i][j] == 1
+                matrix[i][j] = 1
             
 def printMatrix(matrix):
     for rows in matrix:
